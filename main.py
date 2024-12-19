@@ -155,6 +155,7 @@ def search(phonebook):
         return []
 
     return results
+
 def search_contacts(phonebook):
     """Вывод результатов поиска контактов в телефонной книге."""
     results = search(phonebook)
@@ -164,6 +165,7 @@ def search_contacts(phonebook):
             print(res)
     else:
         print("Контакты не найдены.")
+
 def search_by_id(phonebook):
     """Поиск контакта по идентификатору (имя + фамилия)."""
     identifier = input_id()
@@ -248,7 +250,7 @@ def edit_contact_by_id(phonebook, identifier):
     print(f'Запись {identifier} успешно отредактирована.')
     save_contacts(phonebook)
 
-def calculateAge(phonebook):
+def calculate_age(phonebook):
     """Вывод возраста контакта по идентификатору (имя + фамилия)."""
     identifier = input_id()
     if identifier not in phonebook:
@@ -296,7 +298,7 @@ def main():
         elif command == '5':
             edit_contact(phonebook)
         elif command == '6':
-            age = calculateAge(phonebook)
+            age = calculate_age(phonebook)
             if age == 0:
                 continue
             print(f'Возраст: {age}')
